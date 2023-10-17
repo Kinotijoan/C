@@ -2,32 +2,62 @@
 
 int main(void)
 {
-    int n;
+    int myArray[5];
+    int length = sizeof(myArray)/sizeof(myArray[0]);
+    int mid = length/2;
 
-    printf("Enter value of n :");
-    scanf("%d", &n);
-
-    int arr[n];
     int i;
-
-    for (i = 0; i < n; i++)
+    for(i=0; i<length; i++)
     {
-        printf("Enter the number :");
-        scanf("%d", &arr[i]);
+        myArray[i] = i;
     }
-     printf("The values stored into the array are :\n");
-     for (i = 0; i < n; i++)
+    for ( i = 0; i < length; i++)
     {
-        printf(" %d", arr[i]);
+        printf("%d", myArray[i]);
+    }
+        printf("\n");
+    for ( i = 0; i < length; i++)
+    {
+        myArray[i]*=2;
+    }
+    for ( i = 0; i < length; i++)
+    {
+        printf("%d", myArray[i]);
+    }
+    printf("\n");
+    for ( i = 0; i < mid; i++)
+    {
+       int temp = myArray[i];
+       int index = length-1;
+       myArray[i] = myArray[index-i];
+       myArray[index-i] = temp;
+    }
+    for ( i = 0; i < length; i++)
+    {
+        printf("%d", myArray[i]);
+    }
+    
+    
+    
+
+
+    // for (i = 0; i < n; i++)
+    // {
+    //     printf("Enter the number :");
+    //     scanf("%d", &arr[i]);
+    // }
+    //  printf("The values stored into the array are :\n");
+    //  for (i = 0; i < n; i++)
+    // {
+    //     printf(" %d", arr[i]);
        
-    }
-    printf("\nThe values store into the array in reverse are :\n");
-     for (i = n-1; i >= 0; i--)
-    {
-        printf(" %d", arr[i]);
+    // }
+    // printf("\nThe values store into the array in reverse are :\n");
+    //  for (i = n-1; i >= 0; i--)
+    // {
+    //     printf(" %d", arr[i]);
         
-    }
-
+    // }
 
     return(0);
 }
