@@ -20,17 +20,29 @@ int main(void)
     {
         myArray[i]*=2;
     }
-    for ( i = 0; i < length; i++)
-    {
-        printf("%d", myArray[i]);
-    }
+    // for ( i = 0; i < length; i++)
+    // {
+    //     printf("%d", myArray[i]);
+    // }
     printf("\n");
+    // for ( i = 0; i < mid; i++)
+    // {
+    //    int temp = myArray[i];
+    //    int index = length-1;
+    //    myArray[i] = myArray[index-i];
+    //    myArray[index-i] = temp;
+    // }
+    int *ptr = myArray;
+    int *ptr2 = &myArray[length-1];
+    int temp;
     for ( i = 0; i < mid; i++)
     {
-       int temp = myArray[i];
-       int index = length-1;
-       myArray[i] = myArray[index-i];
-       myArray[index-i] = temp;
+       temp = *ptr;
+       *ptr = *ptr2;
+       *ptr2 = temp;
+       ptr++;
+       ptr2--;
+
     }
     for ( i = 0; i < length; i++)
     {
